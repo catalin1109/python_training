@@ -1,55 +1,33 @@
-# importing random in order to generate random numbers
-import random
+# assigning text to variable
+txt = "homEwork:\n" " tHis iz your homeWork, copy these Text to variable.\n"" \n"" You NEED TO normalize it fROM letter CASEs point oF View. also, create one MORE senTENCE witH LAST WoRDS of each existING SENtence and add it to the END OF this Paragraph.\n"" \n"" it iZ misspeLLing here. fix"'"iZ"'" with correct “is”, but ONLY when it Iz a mistAKE.\n"" \n"" last iz TO calculate nuMber OF Whitespace characteRS in this Tex. caREFULL, not only Spaces, but ALL whitespaces. I got 87."
 
-# Create an empty list
-lst = []
+print(" original text is:")
+print(txt)
 
-# loop through 100 iteration
-for i in range(100):
-    # Append random number in each iteration
-    lst.append(random.randrange(1, 100, 1))
+# capitalizing first letter of each paragraph and putting them in variable txt2
 
-# printing original list
-print("original list is")
-print(lst)
+res = [i.strip().capitalize() for i in txt.split('\n')]
+txt2 = ('\n '.join(res))
 
-# repeating loop 100(number of elements in list) times
-for j in range(100):
+# debug, ignore, print('-----------------------txt2 ------------------------')
+txt2 = txt2.replace(' iz ', ' is ')
+# debug, ignore print(txt2)
 
-    # initially swapped is false
-    swapped = False
-    i = 0
-    while i < len(lst) - 1:
-        # comparing the adjacent elements
-        if lst[i] > lst[i + 1]:
-            # swapping
-            lst[i], lst[i + 1] = lst[i + 1], lst[i]
-            # Changing the value of swapped
-            swapped = True
-        i = i + 1
-    # if swapped is false then the list is sorted
-    # we can stop the loop
-    if not swapped:
-        break
+# splitting txt2 into sentences for capitalization of first word of each sentence
+lines = txt2.split('. ')  # Split the sentences
 
-# print sorted list
-print("sorted list is")
-print(lst)
+# capitalizing each word of every sentence and storing it into variable txt3
+for index, line in enumerate(lines):
+    lines[index] = line[0].upper() + line[1:]
+txt3 = (". ".join(lines))
 
-# declaring variables for sums of ods and evens and number of odds and evens
-sum_odds = 0
-sum_even = 0
-odds = 0
-evens = 0
+print(' adjusted text is ')
+print(txt3)
+# variable to store number of whitespace
+count = 0
+# looping through text and counting blanks
+for i in txt3:
+    if i.isspace():
+        count = count + 1
 
-# calculating sum for ods and number of odd numbers and sum for evens and number of even numbers by iterating through the list
-for i in range(100):
-    if (lst[i] % 2) == 0:
-        sum_even = sum_even + lst[i]
-        evens = evens + 1
-    else:
-        sum_odds = sum_odds + lst[i]
-        odds = odds + 1
-
-# printing averages, converting floats to string to avoid conversion errors
-print("Average for odds is " + str(sum_odds/odds) + " and average for evens is " + str(sum_even/evens))
+print("The number of blank spaces is: ", count)
