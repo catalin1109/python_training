@@ -43,7 +43,7 @@ for i in range(len(lst)):
     for j in lst[i]:
         # if key is duplicate then delete duplicate key and add new key value pair where key is transformed per requirement and value is max value
         if j in d_merged:
-            if int(d_merged[j]) < lst[i][j]:
+            if int(d_merged[j[:1]]) < lst[i][j]:
                 del d_merged[j]
                 d_merged[j+str(i+1)] = str(lst[i][j])
 
