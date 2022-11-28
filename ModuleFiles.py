@@ -197,3 +197,4 @@ output_file1.close()
 proc_file = open(r"proc_files.txt", "a")
 proc_file.write(input_file_name + '\n')
 proc_file.close()
+#  please note that  a record stretching on multiple lines will not be processed correctly a split between records needs to be added and processed file deletion needs to be added too. this is being done in the following module, csv parsing
