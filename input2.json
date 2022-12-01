@@ -1,0 +1,19 @@
+{
+    "NEWSFEED": [
+        {
+            "Record_type": "NEWS",
+            "input1": "CITY",
+            "input2": "text_for_news"
+        },
+        {
+            "Record_type": "AD",
+            "input1": "text for ad",
+            "input2": "2020-02-02"
+        },
+        {
+            "Record_type": "FIBONACCI",
+            "input1": "5",
+            "input2": ""
+        }
+    ]
+}
