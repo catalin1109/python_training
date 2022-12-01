@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<NewsFeed>
+    <record><Record_type>NEWS</Record_type><input1>CITY</input1><input2>text_for_news</input2></record>
+    <record><Record_type>AD</Record_type><input1>text for ad</input1><input2>2020-02-02</input2></record>
+    <record><Record_type>FIBONACCI</Record_type><input1>5</input1><input2></input2></record>
+</NewsFeed>
